@@ -20,7 +20,7 @@ class CreateBookmarksTable extends Migration
             $table->string('url', 255)->comment('ブックマークしたURL');
             $table->text('comment')->comment('ブックマークした内容に対するコメント。将来的な拡張も見据えて文字数は余裕をもたせる');
             $table->string('page_title', 100)->default('')->comment('ブックマークしたページのタイトル');
-            $table->string('page_thumbnail_url', 255)->default('')->comment('ブックマークしたページのサムネイル（OGP画像）');
+            $table->string('page_thumbnail_url', 5000)->default('')->comment('ブックマークしたページのサムネイル（OGP画像）');
             $table->string('page_description', 300)->default('')->comment('ブックマークしたページのDescription');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // ユーザーが退会したとき等で物理削除したら関連ブックマークも消す

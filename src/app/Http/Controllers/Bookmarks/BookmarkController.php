@@ -9,6 +9,7 @@ use App\Models\Bookmark;
 use App\Models\BookmarkCategory;
 use App\Models\User;
 use Artesaos\SEOTools\Facades\SEOTools;
+use Cardei\LinkPreview\Client;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -18,7 +19,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
-use Teners\LaravelLinkPreview\LinkPreview;
 
 class BookmarkController extends Controller
 {
@@ -153,9 +153,9 @@ class BookmarkController extends Controller
 
         // 下記のサービスでも同様のことが実現できる
         // @see https://www.linkpreview.net/
-//        $previewClient = new Client($request->url);
+        $previewClient = new Client($request->url);
         try {
-            $preview = LinkPreview::getPreview($request->url)->toArray();
+            $preview = $previewClient->getPreview('general')->toArray();
 
             $model = new Bookmark();
             $model->url = $request->url;

@@ -3,3 +3,5 @@
 docker/https-portal/_cert
 
 src/storage
+
+docker/https-portal/cert
