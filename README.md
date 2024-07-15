@@ -1,6 +1,6 @@
 # このリポジトリについて
 
-教材「LaravelでFat Controllerを卒業しよう」のリポジトリです。
+Zenn教材「LaravelでFat Controllerを卒業しよう」のリポジトリです。
 
 # 環境構築
 
@@ -26,7 +26,7 @@
 6. `docker-compose logs -f` ※コンテナのログをターミナルで見ることができます
 7. `docker-compose down` ※作業を終了するときに使います
 
-### M1 Mac向け
+### M1以降の Mac向け
 
 1. `docker-compose -f docker-compose.yml -f docker-compose.m1-mac.yml up -d`
 2. `docker-compose exec app composer install`
