@@ -1,7 +1,7 @@
 FROM php:8.2-fpm
 
 COPY php.ini /usr/local/etc/php/php.ini
-RUN sed -i "s/\${TZ}/${TZ}/" /usr/local/etc/php/php.ini
+RUN sed -i "s/\${TZ}/Asia\/Tokyo/" /usr/local/etc/php/php.ini
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -16,6 +16,5 @@ RUN apt-get update && \
   docker-php-ext-install intl pdo_mysql mbstring zip bcmath
 
 COPY ./php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
-COPY ./php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /opt/laravel-bookmark

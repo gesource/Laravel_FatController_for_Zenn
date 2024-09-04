@@ -28,13 +28,13 @@ Zenn教材「LaravelでFat Controllerを卒業しよう」のリポジトリで�
 
 ### M1以降の Mac向け
 
-1. `docker-compose -f docker-compose.yml -f docker-compose.m1-mac.yml up -d`
-2. `docker-compose exec app composer install`
-3. `docker-compose exec app php artisan key:generate`
-4. `docker-compose exec app php artisan migrate`
-5. `docker-compose exec app php artisan db:seed`
-6. `docker-compose logs -f` ※コンテナのログをターミナルで見ることができます
-7. `docker-compose -f docker-compose.yml -f docker-compose.m1-mac.yml up down` ※作業を終了するときに使います
+1. `docker compose -f docker-compose.yml -f docker-compose.m1-mac.yml up -d`
+2. `docker compose exec app composer install`
+3. `docker compose exec app php artisan key:generate`
+4. `docker compose exec app php artisan migrate`
+5. `docker compose exec app php artisan db:seed`
+6. `docker compose logs -f` ※コンテナのログをターミナルで見ることができます
+7. `docker compose -f docker-compose.yml -f docker-compose.m1-mac.yml up down` ※作業を終了するときに使います
 
 ## ページ確認
 
