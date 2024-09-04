@@ -58,6 +58,16 @@ Zenn教材「LaravelでFat Controllerを卒業しよう」のリポジトリで�
 1. `docker-compose -f docker-compose.yml -f docker-compose.m1-mac.yml up -d` ※作業を開始するときに使います
 2. `docker-compose -f docker-compose.yml -f docker-compose.m1-mac.yml down` ※作業を終了するときに使います
 
+### 初回の起動後に以下を実行する
+
+```
+docker compose exec app mkdir -p /opt/laravel-bookmark/storage
+docker compose exec app mkdir -p /opt/laravel-bookmark/storage/framework/sessions && \
+docker compose exec app mkdir -p /opt/laravel-bookmark/storage/framework/views && \
+docker compose exec app chown -R www-data:www-data /opt/laravel-bookmark/storage && \
+docker compose exec app chmod -R 775 /opt/laravel-bookmark/storage
+```
+
 # Laravelからデータベースに接続する際の接続情報
 
 | 項目名      | 値                |
