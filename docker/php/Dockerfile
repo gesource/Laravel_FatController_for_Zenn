@@ -1,6 +1,7 @@
 FROM php:8.2-fpm
 
 COPY php.ini /usr/local/etc/php/php.ini
+RUN sed -i "s/\${TZ}/${TZ}/" /usr/local/etc/php/php.ini
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
